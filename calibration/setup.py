@@ -24,7 +24,9 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'eye_to_hand_calibration = calibration.eye_to_hand_calibration:main'
+            'eye_to_hand_calibration = calibration.eye_to_hand_calibration:main',
+            'hand_eye_calibration = calibration.hand_eye_calibration:main',
+            'tool_pose_reader = calibration.tool_pose_reader:main'
         ],
     },
 )
