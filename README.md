@@ -5,9 +5,12 @@ sudo apt install ros-jazzy-librealsense2*
 ```
 
 # Camera Calibration
-
+Camera calibration is essential for accurately determining the camera extrinsics, which are crucial for precise robotic grasping tasks.
 ## Eye-to-Hand Calibration
-
+Launch of eye-to-hand calibration + D415 Camera
+```bash
+ros2 launch calibration eye_to_hand_calibration.launch.py
+```
 ## Eye-in-Hand Calibration
 
 ## Intel Realsense

@@ -17,14 +17,14 @@ class CameraEyeToHandCalibration(Node):
 
         self.subscription = self.create_subscription(
             Image,
-            '/camera/camera/color/image_raw',
+            '/camera/D415/color/image_raw',
             self.image_callback,
             10
         )
 
         self.info_sub = self.create_subscription(
             CameraInfo,
-            '/camera/camera/color/camera_info', 
+            '/camera/D415/color/camera_info', 
             self.camera_info_callback,
             10
         )
@@ -59,7 +59,7 @@ class CameraEyeToHandCalibration(Node):
                 objp[i + (j*self.grid_rows), 0] = (x_offset + (((self.grid_rows/2.0)-1) * table_spacing)) - ((i)*table_spacing)
                 objp[i + (j*self.grid_rows), 1] =  y_offset + (j * table_spacing)
 
-        objp = objp[::-1] # Flip point order (wenn kamera auf dem Kopf steht 🙃)
+        #objp = objp[::-1] # Flip point order (wenn kamera auf dem Kopf steht 🙃)
 
         frame = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
 
@@ -91,8 +91,8 @@ class CameraEyeToHandCalibration(Node):
                 t_cv = np.asarray(tvec).reshape(3,)
 
                 trans = self.tf_buffer.lookup_transform(
-                    "camera_link",
-                    "camera_color_optical_frame",
+                    "D415_link",
+                    "D415_color_optical_frame",
                     rclpy.time.Time()
                 )
 
