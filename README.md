@@ -1,4 +1,8 @@
 # Perception Tools 📸
+Software prerequisites:
+```bash
+sudo apt install ros-jazzy-librealsense2*
+```
 
 # Camera Calibration
 
