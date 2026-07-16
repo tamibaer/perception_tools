@@ -30,7 +30,8 @@ setup(
         'console_scripts': [
             'eye_to_hand_calibration = calibration.eye_to_hand_calibration:main',
             'hand_to_eye_calibration = calibration.hand_to_eye_calibration:main',
-            'tool_pose_reader = calibration.tool_pose_reader:main'
+            'tool_pose_reader = calibration.tool_pose_reader:main',
+            'test = calibration.test:main',
         ],
     },
 )
