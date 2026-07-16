@@ -11,7 +11,9 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        ('share/' + package_name + '/launch', glob('launch/*.py'))
+        ('share/' + package_name + '/launch', glob('launch/*.py')),
+        ('share/' + package_name + '/config', glob('config/*.yaml')),
+        ('share/' + package_name + '/meshes', glob('meshes/*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -27,9 +29,8 @@ setup(
     entry_points={
         'console_scripts': [
             'eye_to_hand_calibration = calibration.eye_to_hand_calibration:main',
-            'hand_eye_calibration = calibration.hand_eye_calibration:main',
-            'tool_pose_reader = calibration.tool_pose_reader:main',
-            'aruco_circle_motion = calibration.aruco_circle_motion:main',
+            'hand_to_eye_calibration = calibration.hand_to_eye_calibration:main',
+            'tool_pose_reader = calibration.tool_pose_reader:main'
         ],
     },
 )
